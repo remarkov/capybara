@@ -204,12 +204,6 @@ workflows:
     scripts:
       - echo "Build"
       
-  $ndk-test
-    name: Injection attempt
-    instance_type: linux
-    scripts:
-      - echo "ooops"
-
   pyenv-test:
     name: Try temp fix for pyenv
     instance_type: linux
