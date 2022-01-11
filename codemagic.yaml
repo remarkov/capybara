@@ -1,12 +1,3 @@
-definitions:
-  scripts:
-    - &echo_with_substitution
-      name: Echo with substitution using the bash way
-      script: |
-        echo $(whoami)
-        echo $(flutter version)
-
-
 workflows:
   $default-workflow:
     name: Default Workflow
