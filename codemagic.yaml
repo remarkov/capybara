@@ -47,6 +47,7 @@ workflows:
     triggering:
       events:
         - pull_request
+        - push
       branch_patterns:
         - pattern: master
           include: true
@@ -54,16 +55,8 @@ workflows:
         - pattern: test
           include: true
           source: false
-    when:
-      changeset:
-        includes:
-          - 'android/'
-        excludes:
-          - '**/.gitignore'
     scripts:
       - flutter packages pub get
-    artifacts:
-      - flutter_drive.log
 
   quick-cache-test:
     name: quick cache test
