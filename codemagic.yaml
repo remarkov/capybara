@@ -46,6 +46,10 @@ workflows:
         - pattern: test
           include: true
           source: false
+    when:
+      changeset:
+        includes:
+          - '.'
     scripts:
       - flutter packages pub get
 
