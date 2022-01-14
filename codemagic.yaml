@@ -65,15 +65,21 @@ workflows:
 
   true:
     name: boolean
-    instance_type: mac_mini
+    instance_type: linux
+    max_build_duration: 3
     environment:
       xcode: 12.4
+    scripts:
+      - flutter --version
 
   3.14:
     name: float
-    instance_type: mac_mini
+    instance_type: linux
+    max_build_duration: 3
     environment:
       xcode: 12.4
+    scripts:
+      - flutter --version
 
   cache-bomb:
     name: cache bomb theory test
