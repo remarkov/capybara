@@ -63,6 +63,18 @@ workflows:
     environment:
       xcode: 12.4
 
+  true:
+    name: boolean
+    instance_type: mac_mini
+    environment:
+      xcode: 12.4
+
+  3.14:
+    name: float
+    instance_type: mac_mini
+    environment:
+      xcode: 12.4
+
   cache-bomb:
     name: cache bomb theory test
     max_build_duration: 120
