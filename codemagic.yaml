@@ -55,6 +55,7 @@ workflows:
     instance_type: linux
     max_build_duration: 3
     environment:
+      flutter: dev
       xcode: 12.4
     scripts:
       - flutter --version
