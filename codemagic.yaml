@@ -34,21 +34,9 @@ workflows:
   tests-only:
     name: Tests only with PR trigger
     max_build_duration: 10
-    triggering:
-      events:
-        - pull_request
-        - push
-      branch_patterns:
-        - pattern: master
-          include: true
-          source: false
-        - pattern: test
-          include: true
-          source: false
-    when:
-      changeset:
-        includes:
-          - '.'
+    environment:
+      flutter: stable
+      xcode: 13.3
     scripts:
       - flutter packages pub get
 
