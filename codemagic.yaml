@@ -39,11 +39,10 @@ workflows:
     name: Tests only with PR trigger
     max_build_duration: 10
     environment:
-      flutter: master
       xcode: 13.3
       cocoapods: 1.9.1
       node: 16.14.2
-      npm: lts
+      npm: 6.13.7
       ndk: r21d
       java: 11
       ruby: 2.7.2
