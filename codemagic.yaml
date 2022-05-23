@@ -38,6 +38,8 @@ workflows:
   tests-only:
     name: Tests only, with trigger
     max_build_duration: 10
+    environment:
+      node: 16.15.0
     triggering:
       events:
         - push
