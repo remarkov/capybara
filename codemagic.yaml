@@ -64,8 +64,9 @@ workflows:
         - $HOME/cached_files/
     scripts:
       - |
-        mkdir $HOME/cached_files
+        mkdir -p $HOME/cached_files
         touch "$HOME/cached_files/cached_$(date -u "+%Y-%m-%d_%H:%M:%S")_build_$CM_BUILD_ID"
+        ls -la $HOME/cached_files
 
   true:
     name: boolean
