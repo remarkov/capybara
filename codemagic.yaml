@@ -1,3 +1,18 @@
+definitions:
+  cache_posix: &cache_posix
+    cache:
+      cache_paths:
+        - $HOME/cached_relative/
+        - /Users/builder/cached_absolute/
+    scripts:
+      - |
+        mkdir -p $HOME/cached_relative
+        mkdir -p $HOME/cached_absolute
+        touch "$HOME/cached_relative/cached_$(date -u "+%Y-%m-%d_%H:%M:%S")_build_$CM_BUILD_ID"
+        touch "$HOME/cached_absolute/cached_$(date -u "+%Y-%m-%d_%H:%M:%S")_build_$CM_BUILD_ID"
+        ls -la $HOME/cached_relative
+        ls -la $HOME/cached_absolute
+
 workflows:
   new-one:
     name: Added workflow
@@ -56,17 +71,23 @@ workflows:
     scripts:
       - flutter packages pub get
 
-  quick-cache-test:
-    name: quick cache test
-    max_build_duration: 3
-    cache:
-      cache_paths:
-        - $HOME/cached_files/
-    scripts:
-      - |
-        mkdir -p $HOME/cached_files
-        touch "$HOME/cached_files/cached_$(date -u "+%Y-%m-%d_%H:%M:%S")_build_$CM_BUILD_ID"
-        ls -la $HOME/cached_files
+  cache-test-m1:
+    name: cache test on M1
+    max_build_duration: 5
+    instance_type: mac_mini_m1
+    <<: *cache_posix
+
+  cache-test-mini:
+    name: cache test on mac mini
+    max_build_duration: 5
+    instance_type: mac_mini
+    <<: *cache_posix
+
+  cache-test-linux:
+    name: cache test on linux
+    max_build_duration: 5
+    instance_type: linux
+    <<: *cache_posix
 
   true:
     name: boolean
