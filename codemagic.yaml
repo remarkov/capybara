@@ -2,16 +2,9 @@ definitions:
   cache_posix: &cache_posix
     cache:
       cache_paths:
-        - $HOME/cached_relative/
-        - /Users/builder/cached_absolute/
+        - /Users/builder/cached_files/
     scripts:
-      - |
-        mkdir -p $HOME/cached_relative
-        touch "$HOME/cached_relative/cached_$(date -u "+%Y-%m-%d_%H:%M:%S")_build_$CM_BUILD_ID"
-        mkdir -p $HOME/cached_absolute
-        touch "$HOME/cached_absolute/cached_$(date -u "+%Y-%m-%d_%H:%M:%S")_build_$CM_BUILD_ID"
-        ls -la $HOME/cached_relative
-        ls -la $HOME/cached_absolute
+      - ls -la $HOME/cached_files
 
 workflows:
   new-one:
