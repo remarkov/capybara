@@ -7,8 +7,8 @@ definitions:
     scripts:
       - |
         mkdir -p $HOME/cached_relative
-        mkdir -p $HOME/cached_absolute
         touch "$HOME/cached_relative/cached_$(date -u "+%Y-%m-%d_%H:%M:%S")_build_$CM_BUILD_ID"
+        mkdir -p $HOME/cached_absolute
         touch "$HOME/cached_absolute/cached_$(date -u "+%Y-%m-%d_%H:%M:%S")_build_$CM_BUILD_ID"
         ls -la $HOME/cached_relative
         ls -la $HOME/cached_absolute
@@ -88,6 +88,23 @@ workflows:
     max_build_duration: 5
     instance_type: linux
     <<: *cache_posix
+
+  cache-test-windows:
+    name: cache test on windows
+    max_build_duration: 5
+    instance_type: windows
+    cache:
+      cache_paths:
+        - $HOME\cached_relative\
+        - C:\Users\builder\cached_absolute\
+    scripts:
+      - |
+        New-Item -ItemType Directory -Force -Path $HOME/cached_relative
+        New-Item ("$HOME\cached_relative\" + (Get-Date -UFormat "+%Y-%m-%d_%H-%M-%S") + "_" + ($Env:CM_BUILD_ID))
+        New-Item -ItemType Directory -Force -Path $HOME/cached_absolute
+        New-Item ("$HOME\cached_absolute\" + (Get-Date -UFormat "+%Y-%m-%d_%H-%M-%S") + "_" + ($Env:CM_BUILD_ID))
+        ls $HOME/cached_relative
+        ls $HOME/cached_absolute
 
   true:
     name: boolean
