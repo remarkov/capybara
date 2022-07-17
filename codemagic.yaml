@@ -4,7 +4,7 @@ definitions:
       cache_paths:
         - /Users/builder/cached_files/
     scripts:
-      - ls -la $HOME/cached_files
+      - ls -la $HOME/cached_files || true
 
 workflows:
   new-one:
