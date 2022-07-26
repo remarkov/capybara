@@ -4,8 +4,10 @@ definitions:
       cache_paths:
         - /Users/builder/cached_files/
     scripts:
-      - ls -la $HOME/cached_files || true
-
+      - |
+        mkdir -p $HOME/cached_files
+        touch "$HOME/cached_files/cached_$(date -u "+%Y-%m-%d_%H:%M:%S")_build_$CM_BUILD_ID"
+        ls -la $HOME/cached_files
 workflows:
   new-one:
     name: Added workflow
