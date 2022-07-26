@@ -13,7 +13,7 @@ workflows:
     instance_type: mac_mini
     environment:
       xcode: latest
-      node: 16.0.1
+      node: 16.0.3
     name: Node test
     scripts:
       - node --version
