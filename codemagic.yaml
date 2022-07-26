@@ -10,9 +10,12 @@ definitions:
         ls -la $HOME/cached_files
 workflows:
   new-one:
-    name: Added workflow
+    environment:
+      xcode: latest
+      node: 16.0.1
+    name: Node test
     scripts:
-      - echo $?
+      - node --version
   default-workflow:
     name: Build iOS and Android
     max_build_duration: 120
