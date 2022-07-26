@@ -10,6 +10,7 @@ definitions:
         ls -la $HOME/cached_files
 workflows:
   new-one:
+    instance_type: mac_mini
     environment:
       xcode: latest
       node: 16.0.1
