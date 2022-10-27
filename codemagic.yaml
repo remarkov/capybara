@@ -168,6 +168,16 @@ workflows:
         - $FLUTTER_ROOT/.pub-cache
     scripts:
       - flutter --version
+      
+  sleep-well-macos-m1:
+    name: 2h sleep on m1 macOS
+    max_build_duration: 120
+    instance_type: mac_mini_m1
+    environment:
+      groups:
+        - test
+    scripts:
+      - sleep 7200
 
   sleep-well-macos:
     name: 2h sleep on macOS
@@ -212,25 +222,6 @@ workflows:
     instance_type: mac_mini
     environment:
       xcode: latest
-    scripts:
-      - flutter --version
-
-  test-flutter-1.22.6-linux:
-    name: Test flutter 1.22.6 on Linux
-    max_build_duration: 3
-    instance_type: linux
-    environment:
-      flutter: 1.22.6
-    scripts:
-      - flutter --version
-
-  test-flutter-1.22.6-macos:
-    name: Test flutter 1.22.6 on macOS
-    max_build_duration: 3
-    instance_type: mac_mini
-    environment:
-      xcode: 13.2
-      flutter: 1.22.6
     scripts:
       - flutter --version
 
