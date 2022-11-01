@@ -142,7 +142,9 @@ workflows:
     name: Xcode logs bomb theory test
     max_build_duration: 120
     scripts:
-      - sudo dd if=/dev/random of=/tmp/xcodebuild_logs/bomb.log bs=1024 count=10485760
+      - |
+        mkdir /tmp/xcodebuild_logs
+        sudo dd if=/dev/random of=/tmp/xcodebuild_logs/bomb.log bs=1024 count=10485760
     artifacts:
       - "/tmp/xcodebuild_logs/*.log"
 
