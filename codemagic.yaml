@@ -138,16 +138,13 @@ workflows:
         mkdir $HOME/itsabomb
         sudo dd if=/dev/random of=$HOME/itsabomb/boom bs=1024 count=10485760
 
-  xcode-bomb:
-    name: Xcode logs bomb theory test
+  logs-bomb:
+    name: logs bomb theory test
     max_build_duration: 120
     scripts:
       - |
-        mkdir /tmp/xcodebuild_logs
-        sudo dd if=/dev/random of=/tmp/xcodebuild_logs/bomb.log bs=1024 count=10485760
-    artifacts:
-      - "/tmp/xcodebuild_logs/*.log"
-
+        base64 /dev/urandom | head -c 10000000
+        exit 1
 
   test-debug-macos:
     name: Test debug build on macOS
