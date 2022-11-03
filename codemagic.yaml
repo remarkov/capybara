@@ -143,7 +143,8 @@ workflows:
     max_build_duration: 120
     scripts:
       - |
-        base64 /dev/urandom | head -c 10000000
+        # output 20 MB of random data to stdout
+        base64 /dev/urandom | head -c 20000000
         exit 1
 
   test-debug-macos:
