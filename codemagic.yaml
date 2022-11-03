@@ -9,14 +9,6 @@ definitions:
         touch "$HOME/cached_files/cached_$(date -u "+%Y-%m-%d_%H:%M:%S")_build_$CM_BUILD_ID"
         ls -la $HOME/cached_files
 workflows:
-  new-one:
-    instance_type: mac_mini
-    environment:
-      xcode: latest
-      node: lts
-    name: Node test
-    scripts:
-      - node --version
   default-workflow:
     name: Build iOS and Android
     max_build_duration: 120
@@ -76,12 +68,6 @@ workflows:
     instance_type: mac_mini_m1
     <<: *cache_posix
 
-  cache-test-mini:
-    name: cache test on mac mini
-    max_build_duration: 5
-    instance_type: mac_mini
-    <<: *cache_posix
-
   cache-test-linux:
     name: cache test on linux
     max_build_duration: 5
@@ -105,34 +91,12 @@ workflows:
         ls $HOME/cached_relative
         ls $HOME/cached_absolute
 
-  true:
-    name: boolean
-    instance_type: linux
-    max_build_duration: 3
-    environment:
-      flutter: dev
-      xcode: 12.4
-    scripts:
-      - flutter --version
-
-  3.14:
-    name: float
-    instance_type: linux
-    max_build_duration: 3
-    environment:
-      xcode: 12.4
-    scripts:
-      - flutter --version
-
   cache-bomb:
     name: cache bomb theory test
     max_build_duration: 120
     cache:
       cache_paths:
         - $HOME/itsabomb
-    instance_type: mac_mini
-    environment:
-      xcode: 12.4
     scripts:
       - |
         mkdir $HOME/itsabomb
@@ -154,8 +118,6 @@ workflows:
       cache_paths:
         - $HOME/.config
         - $FCI_BUILD_DIR/.metadata
-    environment:
-      xcode: 12.4
     scripts:
       - flutter --version
 
@@ -191,11 +153,10 @@ workflows:
   sleep-well-macos:
     name: 2h sleep on macOS
     max_build_duration: 120
-    instance_type: mac_mini
+    instance_type: mac_pro
     environment:
       groups:
         - test
-      xcode: 13.3
     cache:
       cache_paths:
         - $HOME/.config
@@ -228,18 +189,15 @@ workflows:
   test-flutter-stable-macos:
     name: Test flutter stable on macOS
     max_build_duration: 30
-    instance_type: mac_mini
-    environment:
-      xcode: latest
+    instance_type: mac_mini_m1
     scripts:
       - flutter --version
 
   test-flutter-master-macos:
     name: Test flutter master on macOS
     max_build_duration: 3
-    instance_type: mac_mini
+    instance_type: mac_mini_m1
     environment:
-      xcode: 13.2
       flutter: master
     scripts:
       - flutter --version
