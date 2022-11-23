@@ -145,6 +145,7 @@ workflows:
     max_build_duration: 120
     instance_type: mac_mini_m1
     environment:
+      unity: 2021.3.4f1
       groups:
         - test
     scripts:
