@@ -156,7 +156,7 @@ workflows:
     max_build_duration: 120
     instance_type: mac_pro
     environment:
-      unity: 2020.3.15f2
+      unity: 2020.3.21f1
       groups:
         - test
     scripts:
