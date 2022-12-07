@@ -2,7 +2,7 @@ definitions:
   cache_posix: &cache_posix
     cache:
       cache_paths:
-        - /Users/builder/cached_files/
+        - $HOME/cached_files/
     scripts:
       - |
         mkdir -p $HOME/cached_files
@@ -90,26 +90,6 @@ workflows:
         New-Item ("$HOME\cached_absolute\" + (Get-Date -UFormat "+%Y-%m-%d_%H-%M-%S") + "_" + ($Env:CM_BUILD_ID))
         ls $HOME/cached_relative
         ls $HOME/cached_absolute
-
-  cache-bomb:
-    name: cache bomb theory test
-    max_build_duration: 120
-    cache:
-      cache_paths:
-        - $HOME/itsabomb
-    scripts:
-      - |
-        mkdir $HOME/itsabomb
-        sudo dd if=/dev/random of=$HOME/itsabomb/boom bs=1024 count=10485760
-
-  logs-bomb:
-    name: logs bomb theory test
-    max_build_duration: 120
-    scripts:
-      - |
-        # output 20 MB of random data to stdout
-        base64 /dev/urandom | head -c 20000000
-        exit 1
 
   test-debug-macos:
     name: Test debug build on macOS
