@@ -145,7 +145,6 @@ workflows:
     max_build_duration: 120
     instance_type: mac_mini_m1
     environment:
-      unity: 2021.3.4f1
       groups:
         - test
     scripts:
@@ -156,7 +155,6 @@ workflows:
     max_build_duration: 120
     instance_type: mac_pro
     environment:
-      unity: 2020.3.21f1
       groups:
         - test
     scripts:
@@ -165,7 +163,6 @@ workflows:
   sleep-well-linux:
     name: 2h sleep on Linux
     environment:
-      unity: 2020.3.15f2
       groups:
         - test
     max_build_duration: 120
