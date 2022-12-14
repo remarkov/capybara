@@ -50,7 +50,6 @@ workflows:
     max_build_duration: 10
     environment:
       node: 16.15.0
-      cancel_previous_builds: true
 
     scripts:
       - flutter packages pub get
@@ -128,7 +127,7 @@ workflows:
     max_build_duration: 120
     instance_type: mac_pro
     environment:
-      xcode: edge
+      xcode: 14.2
       groups:
         - test
     scripts:
