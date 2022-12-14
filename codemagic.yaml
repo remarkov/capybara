@@ -14,7 +14,7 @@ workflows:
     max_build_duration: 120
     environment:
       flutter: stable
-      xcode: 14
+      xcode: edge
     scripts:
       - |
         # set up debug keystore
@@ -50,13 +50,6 @@ workflows:
     max_build_duration: 10
     environment:
       node: 16.15.0
-    triggering:
-      events:
-        - push
-      branch_patterns: 
-        - pattern: '*'
-          include: true
-          source: true
       cancel_previous_builds: true
 
     scripts:
@@ -135,6 +128,7 @@ workflows:
     max_build_duration: 120
     instance_type: mac_pro
     environment:
+      xcode: edge
       groups:
         - test
     scripts:
