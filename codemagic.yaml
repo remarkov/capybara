@@ -180,6 +180,15 @@ workflows:
     scripts:
       - echo "Build"
       
+  unity-test:
+    name: Test custom Unity version
+    instance_type: mac_mini_m1
+    environment:
+      xcode: edge
+      unity: 2021.3.15f1
+    scripts:
+      - echo "Build"
+      
   pyenv-test:
     name: Try temp fix for pyenv
     instance_type: linux
