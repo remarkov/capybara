@@ -182,7 +182,7 @@ workflows:
       
   unity-test:
     name: Test custom Unity version
-    instance_type: mac_mini_m1
+    instance_type: mac_pro
     environment:
       groups:
         - unity
