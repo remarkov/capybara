@@ -187,7 +187,7 @@ workflows:
       xcode: edge
       unity: 2021.3.15f1
     scripts:
-      - echo "Build"
+      - echo $UNITY_HOME
       
   pyenv-test:
     name: Try temp fix for pyenv
