@@ -184,6 +184,8 @@ workflows:
     name: Test custom Unity version
     instance_type: mac_mini_m1
     environment:
+      groups:
+        - unity
       xcode: edge
       unity: 2021.3.15f1
     scripts:
