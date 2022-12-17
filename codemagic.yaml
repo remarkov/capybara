@@ -188,7 +188,8 @@ workflows:
       unity: 2021.3.15f1
     scripts:
       - echo $UNITY_HOME
-      
+      - echo $UNITY_BIN
+
   pyenv-test:
     name: Try temp fix for pyenv
     instance_type: linux
