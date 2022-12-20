@@ -68,7 +68,7 @@ workflows:
 
   cache-test-windows:
     name: cache test on windows
-    max_build_duration: 5
+    max_build_duration: 15
     instance_type: windows_x2
     cache:
       cache_paths:
