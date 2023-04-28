@@ -187,7 +187,7 @@ workflows:
     environment:
       groups:
         - unity
-      xcode: edge
+      xcode: 13.3
       unity: 2021.3.15f1
     scripts:
       - echo $UNITY_HOME
