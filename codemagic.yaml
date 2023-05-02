@@ -123,12 +123,11 @@ workflows:
       - sleep 7200
 
   sleep-well-macos:
-    name: 2h sleep on macOS (Xcode 13.3)
+    name: 2h sleep on macOS (Xcode 14.2)
     max_build_duration: 120
     instance_type: mac_pro
     environment:
-      xcode: 13.3
-      node: 14
+      xcode: 14.2
       groups:
         - test
     scripts:
