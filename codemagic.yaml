@@ -45,7 +45,7 @@ workflows:
       - build/windows/**/*.msix
       - flutter_drive.log
 
-  646cd12131d8edd3b9402e8d:
+  602c3587ede2fe67719aa4e3:
     name: Test workflow name as ObjectId
     max_build_duration: 10
     scripts:
