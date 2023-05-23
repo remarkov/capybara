@@ -45,14 +45,11 @@ workflows:
       - build/windows/**/*.msix
       - flutter_drive.log
 
-  tests-only:
-    name: Tests only, with trigger
+  646cd12131d8edd3b9402e8d:
+    name: Test workflow name as ObjectId
     max_build_duration: 10
-    environment:
-      node: 16.15.0
-
     scripts:
-      - flutter packages pub get
+      - echo "Gotcha!"
 
   cache-test-m1:
     name: cache test on M1
