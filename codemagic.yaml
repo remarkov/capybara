@@ -45,12 +45,6 @@ workflows:
       - build/windows/**/*.msix
       - flutter_drive.log
 
-  602c3587ede2fe67719aa4e3:
-    name: Test workflow name as ObjectId
-    max_build_duration: 10
-    scripts:
-      - echo "Gotcha!"
-
   cache-test-m1:
     name: cache test on M1
     max_build_duration: 5
@@ -81,8 +75,11 @@ workflows:
         ls $HOME/cached_absolute
 
   test-debug-macos:
-    name: Test debug build on macOS
+    name: Test debug build on macOS (13.3)
     max_build_duration: 30
+    instance_type: mac_mini
+    environment:
+      xcode: 13.3
     cache:
       cache_paths:
         - $HOME/.config
