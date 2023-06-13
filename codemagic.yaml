@@ -75,11 +75,11 @@ workflows:
         ls $HOME/cached_absolute
 
   test-debug-macos:
-    name: Test debug build on macOS (13.3)
+    name: Test debug build on macOS (15.0)
     max_build_duration: 30
-    instance_type: mac_mini
+    instance_type: mac_mini_m1
     environment:
-      xcode: 13.3
+      xcode: 15
     cache:
       cache_paths:
         - $HOME/.config
