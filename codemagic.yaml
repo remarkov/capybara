@@ -59,7 +59,7 @@ workflows:
     scripts:
       - name: Upgrade flutter to 3.10.7
         script: |
-          cd ~/programs/flutter_3.10.6
+          cd ~/programs/flutter
           git fetch --tags
           git checkout 3.10.7
           flutter --version
