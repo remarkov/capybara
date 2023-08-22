@@ -51,6 +51,20 @@ workflows:
     instance_type: mac_mini_m1
     <<: *cache_posix
 
+  flutter-git:
+    name: test flutter 3.10.7
+    environment:
+      flutter: 3.10.6
+    max_build_duration: 5
+    scripts:
+      - name: Upgrade flutter to 3.10.7
+        script: |
+          cd ~/programs/flutter_3.10.6
+          git fetch --tags
+          git checkout 3.10.7
+          flutter --version
+        
+  
   cache-test-linux:
     name: cache test on linux
     max_build_duration: 5
