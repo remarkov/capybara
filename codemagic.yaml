@@ -103,6 +103,7 @@ workflows:
 
   test-emulator-linux:
     name: Tests Android emulator under linux
+    instance_type: linux
     max_build_duration: 10
     scripts:
       - |
