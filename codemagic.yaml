@@ -195,7 +195,7 @@ workflows:
       groups:
         - unity
       xcode: 13.3
-      unity: 2022.3.8f1
+      unity: 2022.3.5f1
     scripts:
       - echo $UNITY_HOME
       - echo $UNITY_BIN
