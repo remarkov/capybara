@@ -122,9 +122,9 @@ workflows:
       - flutter --version
       
   sleep-well-macos-m1:
-    name: 2h sleep on m1 macOS
+    name: 2h sleep on m2 macOS
     max_build_duration: 120
-    instance_type: mac_mini_m1
+    instance_type: mac_mini_m2
     environment:
       groups:
         - test
