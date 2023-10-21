@@ -14,7 +14,7 @@ workflows:
     max_build_duration: 120
     environment:
       flutter: stable
-      xcode: 15
+      xcode: 15.1
     scripts:
       - |
         # set up debug keystore
