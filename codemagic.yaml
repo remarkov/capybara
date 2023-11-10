@@ -96,6 +96,7 @@ workflows:
       groups:
         - test
       xcode: $XCODE_VERSION
+      flutter: $FLUTTER_VERSION
     cache:
       cache_paths:
         - $HOME/.config
