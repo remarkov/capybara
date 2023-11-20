@@ -48,7 +48,6 @@ workflows:
   cache-test-m1:
     name: cache test on M1
     max_build_duration: 5
-    instance_type: mac_mini_m1
     <<: *cache_posix
 
   flutter-git:
