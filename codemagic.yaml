@@ -15,8 +15,10 @@ workflows:
     environment:
       flutter: stable
       xcode: edge
+      groups:
+        - utils
     when:
-      condition: [[ $(expr $(date +"%-V") % 2) == 0 ]]
+      condition: $IS_WEEK_EVEN
     scripts:
       - |
         # set up debug keystore
