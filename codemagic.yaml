@@ -17,6 +17,8 @@ workflows:
       xcode: edge
       groups:
         - utils
+      when:
+        condition: IS_WEEK_EVEN
     scripts:
       - |
         # set up debug keystore
