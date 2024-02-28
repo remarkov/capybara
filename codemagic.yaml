@@ -18,7 +18,7 @@ workflows:
       groups:
         - utils
     when:
-      condition: $IS_WEEK_EVEN
+      condition: IS_WEEK_EVEN
     scripts:
       - |
         # set up debug keystore
