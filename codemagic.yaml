@@ -51,7 +51,6 @@ workflows:
 
   cache-test-m1:
     name: cache test on M1
-    instance_type: mac_mini_m2_rk
     max_build_duration: 5
     <<: *cache_posix
 
