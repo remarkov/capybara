@@ -125,12 +125,12 @@ workflows:
           - mac_mini_m2
           - linux_x2
           - windows_x2
-      xcode:
+      xcode_ver:
         description: Xcode version to use
         type: string
-    instance_type: mac_mini_m1
+    instance_type: ${{ inputs.instance }}
     environment:
-      xcode: ${{ xcode }}
+      xcode: ${{ inputs.xcode_ver }}
       groups:
         - test
     scripts:
