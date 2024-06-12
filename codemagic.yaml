@@ -128,7 +128,7 @@ workflows:
       xcode:
         description: Xcode version to use
         type: string
-    instance_type: ${{ instance }}
+    instance_type: mac_mini_m1
     environment:
       xcode: ${{ xcode }}
       groups:
