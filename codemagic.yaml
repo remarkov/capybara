@@ -113,72 +113,33 @@ workflows:
         adb wait-for-device
         adb devices
           
-  test-flutter-stable-linux:
-    name: Test flutter stable on Linux
-    max_build_duration: 3
-    instance_type: linux
-    cache:
-      cache_paths:
-        - $FLUTTER_ROOT/.pub-cache
-    scripts:
-      - flutter --version
-      
-  sleep-well-macos-m1:
-    name: 2h sleep on m1 macOS
+  sleep-well-debug:
+    name: 2h sleep for debugging purposes
     max_build_duration: 120
-    instance_type: mac_mini_m1
+    inputs:
+      instance:
+        description: Instance type for debugging
+        type: choice
+        options:
+          - mac_mini_m1
+          - mac_mini_m2
+          -linux_x2
+          - windows_x2
+      xcode:
+        description: Xcode version to use
+        type: string
+    instance_type: ${{ instance }}
     environment:
-      xcode: 15.3
+      xcode: ${{ xcode }}
       groups:
         - test
     scripts:
-      - sleep 7200
-
-  sleep-well-macos:
-    name: 2h sleep on macOS (Xcode 13.3)
-    max_build_duration: 120
-    instance_type: mac_pro
-    environment:
-      xcode: 13.3
-      groups:
-        - test
-    scripts:
-      - sleep 7200
-
-  sleep-well-linux:
-    name: 2h sleep on Linux
-    environment:
-      groups:
-        - test
-    max_build_duration: 120
-    scripts:
-      - ssh-add -L
-      - sleep 7200
-
-  sleep-well-windows:
-    name: 2h sleep on Windows
-    environment:
-      groups:
-        - test
-    max_build_duration: 120
-    instance_type: windows_x2
-    scripts:
-      - ssh-add -L
       - sleep 7200
 
   test-flutter-stable-macos:
     name: Test flutter stable on macOS
     max_build_duration: 30
     instance_type: mac_mini_m1
-    scripts:
-      - flutter --version
-
-  test-flutter-master-macos:
-    name: Test flutter master on macOS
-    max_build_duration: 3
-    instance_type: mac_mini_m1
-    environment:
-      flutter: master
     scripts:
       - flutter --version
 
