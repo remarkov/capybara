@@ -8,7 +8,7 @@ workflows:
       - find . -name "Podfile" -execdir pod install \;
       - flutter build ios --release --build-name=1.0.$BUILD_NUMBER --build-number=$BUILD_NUMBER --no-codesign
     artifacts:
-      - /tmp/xcodebuild_logs/*.log
+      - /Users/builder/clone/build/ios/iphoneos/Runner.app
   empty:
     name: Empty
     environment:
