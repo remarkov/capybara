@@ -2,9 +2,8 @@ workflows:
   build-ios:
     name: Build iOS
     environment:
-      xcode: 13.3
+      xcode: 15.1
     scripts:
-      - ifconfig | grep 10 | grep inet
       - flutter packages pub get
       - find . -name "Podfile" -execdir pod install \;
       - flutter build ios --release --build-name=1.0.$BUILD_NUMBER --build-number=$BUILD_NUMBER --no-codesign
@@ -13,6 +12,6 @@ workflows:
   empty:
     name: Empty
     environment:
-      xcode: 13.3
+      xcode: 15.3
     scripts:
       - echo "empty"
