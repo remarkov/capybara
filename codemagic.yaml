@@ -12,6 +12,8 @@ workflows:
     publishing:
       email:
         recipients:
+          - remarkov+c1@gmail.com
+          - remarkov+c2@gmail.com
           - remarkov+c2@gmail.com
         notify:
           success: true
