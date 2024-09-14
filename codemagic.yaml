@@ -11,6 +11,8 @@ workflows:
     artifacts:
       - /Users/builder/clone/build/ios/iphoneos/Runner.app
     publishing:
+      tester_groups:
+        testers
       email:
         recipients:
           - remarkov+c1@gmail.com
