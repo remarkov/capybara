@@ -4,6 +4,7 @@ workflows:
     environment:
       xcode: 15.1
     scripts:
+      - exit 1
       - flutter packages pub get
       - find . -name "Podfile" -execdir pod install \;
       - flutter build ios --release --build-name=1.0.$BUILD_NUMBER --build-number=$BUILD_NUMBER --no-codesign
@@ -16,7 +17,8 @@ workflows:
           - remarkov+c2@gmail.com
           - remarkov+c2@gmail.com
         notify:
-          success: true
+          success: false
+          failure: true
   empty:
     name: Empty
     environment:
