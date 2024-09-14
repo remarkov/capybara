@@ -9,6 +9,12 @@ workflows:
       - flutter build ios --release --build-name=1.0.$BUILD_NUMBER --build-number=$BUILD_NUMBER --no-codesign
     artifacts:
       - /Users/builder/clone/build/ios/iphoneos/Runner.app
+    publishers:
+      email:
+        recipients:
+          - remarkov+c2@gmail.com
+        notify:
+          success: true
   empty:
     name: Empty
     environment:
