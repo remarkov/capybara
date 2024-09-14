@@ -4,7 +4,6 @@ workflows:
     environment:
       xcode: 15.1
     scripts:
-      - exit 1
       - flutter packages pub get
       - find . -name "Podfile" -execdir pod install \;
       - flutter build ios --release --build-name=1.0.$BUILD_NUMBER --build-number=$BUILD_NUMBER --no-codesign
@@ -12,7 +11,7 @@ workflows:
       - /Users/builder/clone/build/ios/iphoneos/Runner.app
     publishing:
       tester_groups:
-        testers
+        - testers
       email:
         recipients:
           - remarkov+c1@gmail.com
