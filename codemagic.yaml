@@ -9,20 +9,10 @@ workflows:
       - flutter build ios --release --build-name=1.0.$BUILD_NUMBER --build-number=$BUILD_NUMBER --no-codesign
     artifacts:
       - /Users/builder/clone/build/ios/iphoneos/Runner.app
-    publishing:
-      tester_groups:
-        - testers
-      email:
-        recipients:
-          - remarkov+c1@gmail.com
-          - remarkov+c2@gmail.com
-          - remarkov+c2@gmail.com
-        notify:
-          success: false
-          failure: true
   empty:
     name: Empty
     environment:
       xcode: 15.3
+      node: 18.20.4
     scripts:
       - echo "empty"
