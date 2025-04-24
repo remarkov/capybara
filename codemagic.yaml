@@ -1,8 +1,9 @@
 workflows:
   build-ios:
     name: Build iOS
+    instance_type: mac_mini_m4
     environment:
-      xcode: latest
+      xcode: 15.1
     scripts:
       - flutter packages pub get
       - find . -name "Podfile" -execdir pod install \;
