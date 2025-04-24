@@ -1,7 +1,6 @@
 workflows:
   build-ios:
     name: Build iOS
-    instance_type: mac_mini_m4
     environment:
       xcode: 15.1
     scripts:
