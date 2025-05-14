@@ -2,7 +2,7 @@ workflows:
   build-ios:
     name: Build iOS
     environment:
-      xcode: 15.1
+      xcode: 16.2
     scripts:
       - flutter packages pub get
       - find . -name "Podfile" -execdir pod install \;
