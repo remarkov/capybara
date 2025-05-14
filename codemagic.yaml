@@ -11,6 +11,5 @@ workflows:
       - /Users/builder/clone/build/ios/iphoneos/Runner.app
   empty:
     name: Empty
-    instance_type: linux
     scripts:
       - echo "empty"
