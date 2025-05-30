@@ -13,3 +13,13 @@ workflows:
     name: Empty
     scripts:
       - echo "empty"
+  cache-test:
+    name: Cache random data
+    cache:
+      cache_paths:
+        - ~/dummy-cache
+    inputs:
+      size:
+        description: Number of bytes to cache
+    scripts:
+      - sudo dd if=/dev/random of=dummy-cache bs=1 count=${{ inputs.size }}
