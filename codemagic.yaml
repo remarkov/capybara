@@ -22,4 +22,4 @@ workflows:
       size:
         description: Number of bytes to cache
     scripts:
-      - sudo dd if=/dev/random of=dummy-cache bs=1 count=${{ inputs.size }}
+      - sudo dd if=/dev/random of=/Users/builder/dummy-cache bs=1 count=${{ inputs.size }} && chmod 666 /Users/builder/dummy-cache
