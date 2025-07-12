@@ -11,6 +11,8 @@ workflows:
       - /Users/builder/clone/build/ios/iphoneos/Runner.app
   empty:
     name: Empty
+    environment:
+      xcode: 16.2
     scripts:
       - echo "empty"
   cache-test:
