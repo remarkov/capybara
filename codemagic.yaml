@@ -12,7 +12,7 @@ workflows:
   empty:
     name: Empty
     environment:
-      xcode: edge
+      xcode: 26.1
     scripts:
       - echo "empty"
   cache-test:
