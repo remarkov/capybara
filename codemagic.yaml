@@ -13,7 +13,7 @@ workflows:
     name: Empty
     instance_type: mac_studio_m4_max
     environment:
-      xcode: 16.2
+      xcode: latest
     scripts:
       - echo "empty"
   cache-test:
