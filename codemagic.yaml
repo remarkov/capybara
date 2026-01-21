@@ -9,12 +9,20 @@ workflows:
       - flutter build ios --release --build-name=1.0.$BUILD_NUMBER --build-number=$BUILD_NUMBER --no-codesign
     artifacts:
       - /Users/builder/clone/build/ios/iphoneos/Runner.app
-  empty:
-    name: Empty
+  empty-20.04:
+    name: Empty 20.04
+    instance_type: linux_x2
     environment:
-      xcode: latest
+      ubuntu: 20.04
     scripts:
-      - echo "empty"
+      - lsb_release -d
+  empty-24.04:
+    name: Empty 24.04
+    instance_type: linux_x2
+    environment:
+      ubuntu: 24.04
+    scripts:
+      - lsb_release -d
   cache-test:
     name: Cache random data
     cache:
