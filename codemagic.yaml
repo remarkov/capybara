@@ -32,4 +32,5 @@ workflows:
       size:
         description: Number of MiB to cache
     scripts:
-      - sudo dd if=/dev/random of=/Users/builder/dummy-cache bs=1048576 count=${{ inputs.size }} && sudo chmod 666 /Users/builder/dummy-cache
+      - ls -la .
+      - sudo test -f /Users/builder/dummy-cache || (sudo dd if=/dev/random of=/Users/builder/dummy-cache bs=1048576 count=${{ inputs.size }} && sudo chmod 666 /Users/builder/dummy-cache)
