@@ -5,7 +5,7 @@ workflows:
     max_build_duration: 5
     environment:
       unity: 6000.3.22f1
-     scripts:
+    scripts:
       - name: Trivial build
         script: echo ok
   build-ios:
