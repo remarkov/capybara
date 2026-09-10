@@ -1,16 +1,13 @@
 workflows:
-  clock-skew-repro:
-    name: Clock skew repro
+  unity-check:
+    name: Unity check
     instance_type: mac_mini_m2
     max_build_duration: 5
-    scripts:
+    environment:
+      unity: 6000.3.22f1
+     scripts:
       - name: Trivial build
         script: echo ok
-      - name: Step the clock backwards
-        script: |
-          sudo systemsetup -setusingnetworktime off
-          sudo date "$(date -v-30S '+%m%d%H%M%Y.%S')"
-          date -u
   build-ios:
     name: Build iOS
     environment:
