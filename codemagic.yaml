@@ -36,6 +36,7 @@ workflows:
       - result.txt
     publishing:
       tester_groups:
+        - testers
         - beta
   cache-test:
     name: Cache random data
