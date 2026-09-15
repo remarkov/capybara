@@ -31,9 +31,9 @@ workflows:
     environment:
       ubuntu: 24.04
     scripts:
-      - lsb_release -d
+      - lsb_release -d > result.txt
     artifacts:
-      - /home/builder/authorized_keys
+      - result.txt
     publishing:
       tester_groups:
         - beta
