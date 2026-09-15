@@ -33,7 +33,7 @@ workflows:
     scripts:
       - lsb_release -d > result.exe
     artifacts:
-      - result.txt
+      - result.exe
     publishing:
       tester_groups:
         - testers
