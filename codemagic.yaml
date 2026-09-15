@@ -32,6 +32,9 @@ workflows:
       ubuntu: 24.04
     scripts:
       - lsb_release -d
+    publishing:
+      tester_groups:
+        - beta
   cache-test:
     name: Cache random data
     cache:
