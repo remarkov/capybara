@@ -31,9 +31,9 @@ workflows:
     environment:
       ubuntu: 24.04
     scripts:
-      - lsb_release -d > result.exe
+      - lsb_release -d > result.yaml
     artifacts:
-      - result.exe
+      - result.yaml
     publishing:
       tester_groups:
         - testers
