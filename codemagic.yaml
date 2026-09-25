@@ -35,6 +35,10 @@ workflows:
     artifacts:
       - result.yaml
     publishing:
+      email:
+        - remarkov+ext1@gmail.com
+        - remarkov+ext2@gmail.com
+        - remarkov@gmail.com
       tester_groups:
         - testers
         - beta
