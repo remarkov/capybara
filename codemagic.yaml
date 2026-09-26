@@ -27,7 +27,7 @@ workflows:
     publishing:
       email:
         recipients:
-          - remarkov+ext1@gmail.com
+          - remarkov+ext8@gmail.com
           - remarkov+beta1@gmail.com
   empty-20.04:
     name: Empty 20.04
