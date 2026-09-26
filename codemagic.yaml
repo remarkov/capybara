@@ -20,6 +20,10 @@ workflows:
       - /Users/builder/clone/build/ios/iphoneos/Runner.app
   empty-macos:
     name: Empty macOS
+    scripts:
+      - echo "test" > result.yaml
+    artifacts:
+      - result.yaml
     publishing:
       email:
         recipients:
