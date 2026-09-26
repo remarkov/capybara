@@ -27,7 +27,7 @@ workflows:
     publishing:
       email:
         recipients:
-          - REMARKOV+ext1@gmail.com
+          - remarkov+ext1@gmail.com
   empty-20.04:
     name: Empty 20.04
     instance_type: linux_x2
