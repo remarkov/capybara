@@ -29,6 +29,7 @@ workflows:
         recipients:
           - remarkov+member@gmail.com
           - remarkov+member2@gmail.com
+          - remarkov+disabled@gmail.com
   empty-20.04:
     name: Empty 20.04
     instance_type: linux_x2
