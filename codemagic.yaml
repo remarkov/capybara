@@ -20,6 +20,8 @@ workflows:
       - /Users/builder/clone/build/ios/iphoneos/Runner.app
   empty-macos:
     name: Empty macOS
+    environment:
+      xcode: 26.6
     scripts:
       - echo "test" > result.yaml
     artifacts:
