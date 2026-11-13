@@ -29,7 +29,7 @@ workflows:
     publishing:
       email:
         recipients:
-          - remarkov+member@gmail.com
+          - remarkov+ext1@gmail.com
           - vladimir@nevercode.io
   empty-20.04:
     name: Empty 20.04
